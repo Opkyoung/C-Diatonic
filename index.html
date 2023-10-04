@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Find C Major Diatonic Chords</title>
+	<style type="text/css">
+		@font-face{ 
+			src: url("smkm.otf");
+			font-family: "smkm";
+		}
+
+		html, body, {margin: 0; padding: 0;}
+
+		.hey{font-family: "smkm"; font-size: 1em; text-align: center; line-height: 1.2em; padding-top: 20px}
+		.chord{font-family: "smkm"; font-size: 3em; right: 15%; top:74%; position: absolute; opacity: 0; transition: opacity 1s;}
+
+		.note{width: 120px; height: 76px; border: 4px solid black; border-radius: 50%; margin: 0px 10px; font-family: "smkm"; font-size: 2em; text-align: center; line-height: 70px; transition: filter 0.4s;}
+		.note:hover{filter: grayscale(80%); scale: 110%; cursor: pointer;}
+		.notes{display: flex; justify-content: center; padding-top: 130px}
+		.lines{width: 100%; padding-top: 0; margin:auto; }
+		.line{width: 1000px; height: 5px; background: black; }
+		.align{margin: auto; margin-top: 65px }
+
+		#c {background: #ff8d8d}
+		#d {background: #ffa645}
+		#e {background: #fff980}
+		#f {background: #aaff31}
+		#g {background: #55baff}
+		#a {background: #3162ff}
+		#b {background: #a566ff}
+
+
+		.circle{width: 90px; height: 70px; border-radius: 50%; border: 3px solid black;position: absolute; left: 46.5%; opacity: 0; transition: opacity 1s}
+		.one{top: 71%; background: #ff8d8d}
+		.two{top: 66%; background: #ffa645}
+		.three{top: 61%; background: #fff980}
+		.four{top: 56%; background: #aaff31}
+		.five{top:51%; background: #55baff}
+		.six{top:46%; background: #3162ff}
+		.seven{top:41%; background: #a566ff}
+
+
+
+	</style>
+	
+
+</head>
+<body>
+	<div class="hey"><b style="background: yellow;">재시작 = 새로고침</b><br>3개의 note를 이용하여<br>코드 조합을 찾아보세요<br>(찾을 때 까지 다양한 조합을 시도해보세요.)</div>
+
+	<div class="chord" id="CM">CM코드</div>
+	<div class="chord" id="Dm">Dm코드</div>
+	<div class="chord" id="Em">Em코드</div>
+	<div class="chord" id="FM">FM코드</div>
+	<div class="chord" id="GM">GM코드</div>
+	<div class="chord" id="Am">Am코드</div>
+	<div class="chord" id="Bm">Bm코드</div>
+
+
+	<div class="circles">
+		<div id="ccircle" class="circle one"></div>
+		<div id="dcircle" class="circle two"></div>
+		<div id="ecircle" class="circle three"></div>
+		<div id="fcircle" class="circle four"></div>
+		<div id="gcircle" class="circle five"></div>
+		<div id="acircle" class="circle six"></div>
+		<div id="bcircle" class="circle seven"></div>
+
+	</div>
+
+	<div class="lines">
+		<div class="line align "></div>
+		<div class="line align "></div>
+		<div class="line align "></div>
+		<div class="line align "></div>
+		<div class="line align "></div>
+	</div>
+	<div class="notes">
+		<div class="note"id = "c">도</div>
+		<div class="note"id = "d">레</div>
+		<div class="note"id = "e">미</div>
+		<div class="note"id = "f">파</div>
+		<div class="note"id = "g">솔</div>
+		<div class="note"id = "a">라</div>
+		<div class="note"id = "b">시</div>
+	</div>
+
+  <div class="hey"><b style="background: yellow;">+ 죄송합니다.....
+    자바스크립트를 통한 코드 찾기 기능 구현에 실패했습니다......<br>현재 도레미파솔라시도 연주만 가능합니다.......^.ㅠ</div>
+	
+
+	<audio id="cAudio" src="c.mp3"></audio>
+	<audio id="dAudio" src="d.mp3"></audio>
+	<audio id="eAudio" src="e.mp3"></audio>
+	<audio id="fAudio" src="f.mp3"></audio>
+	<audio id="gAudio" src="g.mp3"></audio>
+	<audio id="aAudio" src="a.mp3"></audio>
+	<audio id="bAudio" src="b.mp3"></audio>
+
+<script type="text/javascript">
+
+
+
+	 document.getElementById('c').addEventListener('click', function() {
+    var cAudio = document.getElementById('cAudio');
+    cAudio.play();
+  });
+	
+	 document.getElementById('d').addEventListener('click', function() {
+    var cAudio = document.getElementById('dAudio');
+    cAudio.play();
+  });
+	
+	 document.getElementById('e').addEventListener('click', function() {
+    var cAudio = document.getElementById('eAudio');
+    cAudio.play();
+  });
+	
+	 document.getElementById('f').addEventListener('click', function() {
+    var cAudio = document.getElementById('fAudio');
+    cAudio.play();
+  });
+
+	 document.getElementById('g').addEventListener('click', function() {
+    var cAudio = document.getElementById('gAudio');
+    cAudio.play();
+  });
+	
+		 document.getElementById('a').addEventListener('click', function() {
+    var cAudio = document.getElementById('aAudio');
+    cAudio.play();
+  });
+	
+		 document.getElementById('b').addEventListener('click', function() {
+    var cAudio = document.getElementById('bAudio');
+    cAudio.play();
+  });
+	
+
+		 var cElement = document.getElementById('c');
+		 var ccircleElement = document.getElementById('ccircle');
+		 cElement.addEventListener('click', function() {
+		  ccircleElement.style.opacity = '1';
+		});
+
+		 		 var dElement = document.getElementById('d');
+		 var dcircleElement = document.getElementById('dcircle');
+		 dElement.addEventListener('click', function() {
+		  dcircleElement.style.opacity = '1';
+		});
+
+		 		 		 var eElement = document.getElementById('e');
+		 var ecircleElement = document.getElementById('ecircle');
+		 eElement.addEventListener('click', function() {
+		  ecircleElement.style.opacity = '1';
+		});
+
+		 		 		 var fElement = document.getElementById('f');
+		 var fcircleElement = document.getElementById('fcircle');
+		 fElement.addEventListener('click', function() {
+		  fcircleElement.style.opacity = '1';
+		});
+
+		 		 		 var gElement = document.getElementById('g');
+		 var gcircleElement = document.getElementById('gcircle');
+		 gElement.addEventListener('click', function() {
+		  gcircleElement.style.opacity = '1';
+		});
+
+		 		 		 var aElement = document.getElementById('a');
+		 var acircleElement = document.getElementById('acircle');
+		 aElement.addEventListener('click', function() {
+		  acircleElement.style.opacity = '1';
+		});
+
+		 		 		 		 var bElement = document.getElementById('b');
+		 var bcircleElement = document.getElementById('bcircle');
+		 bElement.addEventListener('click', function() {
+		  bcircleElement.style.opacity = '1';
+		});
+
+
+function updateChordDisplay() {
+  var ccircleElement = document.getElementById('ccircle');
+  var ecircleElement = document.getElementById('ecircle');
+  var gcircleElement = document.getElementById('gcircle');
+  var cmChord = document.getElementById('CM');
+
+  
+  if (parseFloat(ccircleElement.style.opacity) === 1 && parseFloat(ecircleElement.style.opacity) === 1 && parseFloat(gcircleElement.style.opacity) === 1) {
+    cmChord.style.opacity = '1';
+  } else {
+    cmChord.style.opacity = '0'; 
+  }
+}
+
+
+
+
+
+
+	
+</script>
+
+</body>
+</html>
